@@ -8,7 +8,7 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: '14'
-      - run: npm install
+      - run: yarn
         working-directory: ms-assessments/functions
-      - run: npm run build
+      - run: yarn build
         working-directory: ms-assessments/functions
