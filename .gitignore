@@ -7,9 +7,6 @@ yarn-error.log*
 firebase-debug.log*
 firebase-debug.*.log*
 
-# Package lock
-functions/package-lock.json
-
 # Firebase cache
 .firebase/
 
@@ -69,3 +66,4 @@ node_modules/
 .env
 
 .idea/
+ms-assessments/functions/package-lock.json
