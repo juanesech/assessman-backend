@@ -6,6 +6,9 @@ on:
       - main
   pull_request:
     branches: [ main ]
+defaults:
+  run:
+    working-directory: ms-assessments/functions
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -16,13 +19,10 @@ jobs:
           node-version: '14'
       - run: yarn
         name: Get dependencies
-        working-directory: ms-assessments/functions
       - run: yarn build
         name: Build
-        working-directory: ms-assessments/functions
-      - name: Codacy Analysis CLI
+      - name: Codacy Analysis
         uses: codacy/codacy-analysis-cli-action@4.0.0
         with:
           # API project token to retrieve your remote Codacy configuration for the project being analyzed
           project-token: ${{ secrets.CODACY_TOKEN }}
-          directory: ./ms-assessments/functions
