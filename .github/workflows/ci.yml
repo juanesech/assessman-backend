@@ -25,4 +25,4 @@ jobs:
         with:
           # API project token to retrieve your remote Codacy configuration for the project being analyzed
           project-token: ${{ secrets.CODACY_TOKEN }}
-          directory: ms-assessments/functions
+          directory: ./ms-assessments/functions
