@@ -21,8 +21,3 @@ jobs:
         name: Get dependencies
       - run: yarn build
         name: Build
-      - name: Codacy Analysis
-        uses: codacy/codacy-analysis-cli-action@4.0.0
-        with:
-          # API project token to retrieve your remote Codacy configuration for the project being analyzed
-          project-token: ${{ secrets.CODACY_TOKEN }}
