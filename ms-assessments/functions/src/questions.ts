@@ -12,7 +12,7 @@ interface Question {
  * Saves question into a firebase document.
  * @return {functions.HttpsFunction} a firebase https function
  */
-export function newQuestion(): functions.HttpsFunction{
+export const  newQuestion = (): functions.HttpsFunction => {
     return functions.https.onRequest(async (req, res) => {
         const body: Question = req.body;
         const writeQuestion= await firestore()
@@ -26,7 +26,7 @@ export function newQuestion(): functions.HttpsFunction{
  * Lists saved questions.
  * @return {functions.HttpsFunction} a firebase https function
  */
- export function listQuestions(): functions.HttpsFunction {
+ export const listQuestions = (): functions.HttpsFunction => {
     return functions.https.onRequest(async (req, res) => {
       const questionsList = await firestore()
           .collection("questions")

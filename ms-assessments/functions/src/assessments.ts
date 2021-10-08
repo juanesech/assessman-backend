@@ -9,7 +9,7 @@ interface Assessment {
  * Saves assessment info into a firebase document.
  * @return {functions.HttpsFunction} a firebase https function
  */
-export function newAssessment(): functions.HttpsFunction {
+export const newAssessment = (): functions.HttpsFunction => {
   return functions.https.onRequest(async (req, res) => {
     const body: Assessment = req.body;
     const writeAssessment= await firestore()
@@ -23,7 +23,7 @@ export function newAssessment(): functions.HttpsFunction {
  * Lists saved assessments.
  * @return {functions.HttpsFunction} a firebase https function
  */
-export function listAssessments(): functions.HttpsFunction {
+export const listAssessments = (): functions.HttpsFunction => {
   return functions.https.onRequest(async (req, res) => {
     const assessmentList = await firestore()
         .collection("assessments")
@@ -40,7 +40,7 @@ export function listAssessments(): functions.HttpsFunction {
  * Get assessment info from a firebase document.
  * @return {functions.HttpsFunction} a firebase https function
  */
-export function getAssessment(): functions.HttpsFunction {
+export const getAssessment = (): functions.HttpsFunction => {
   return functions.https.onRequest(async (req, res) => {
     const assessmentId = req.query.id;
     let data:
