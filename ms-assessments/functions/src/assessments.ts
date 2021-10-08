@@ -53,8 +53,7 @@ export const getAssessment = (): functions.HttpsFunction => {
           .collection("assessments")
           .doc(assessmentId)
           .get()
-          .then((querySnap) => (querySnap.exists ? querySnap.data() : null)
-          );
+          .then((querySnap) => (querySnap.exists ? querySnap.data() : null));
       if (!data) {
         res.statusCode = 404;
         res.json({message: `Assessment with ID ${assessmentId} not found`});
